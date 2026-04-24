@@ -1,0 +1,8 @@
+{
+  "name": "Intelligent Multi-Doc Research Assistant",
+  "description": "A production-grade AI research platform for ingesting PDFs/DOCX, performing RAG-based QA with citations, and generating cross-document summaries with explainable source highlighting.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
