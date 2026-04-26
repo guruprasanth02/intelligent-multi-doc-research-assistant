@@ -184,7 +184,7 @@ ${context}
 // ── RAG: research answer ─────────────────────────────────────────────────────
 export async function generateResearchAnswer(query, contextChunks, docs, history) {
   try {
-    const response = await fetch('http://localhost:8000/research', {
+    const response = await fetch('/api/research', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, chunks: contextChunks, docs, history }),
