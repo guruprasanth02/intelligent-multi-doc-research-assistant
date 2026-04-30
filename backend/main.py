@@ -10,7 +10,7 @@ import logging
 import traceback
 import time
 
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -27,9 +27,12 @@ app.add_middleware(
 )
 
 # Configure Gemini
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("VITE_GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     logger.warning("GEMINI_API_KEY not set. Gemini API calls will likely fail.")
+else:
+    masked = GEMINI_API_KEY[:8] + "..." + GEMINI_API_KEY[-4:]
+    logger.info(f"Loaded GEMINI_API_KEY: {masked} (length={len(GEMINI_API_KEY)})")
 try:
     genai = Client(api_key=GEMINI_API_KEY)
 except Exception:
