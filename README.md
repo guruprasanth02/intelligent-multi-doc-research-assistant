@@ -22,6 +22,11 @@ A premium AI-powered research tool built with React + Vite + FastAPI + Google Ge
 
 ---
 
+
+## 🌐 Live Demo
+Try the app here: **[Research_Mind](https://intelligent-multi-doc-research-assi.vercel.app)**
+
+
 ## 🚀 Setup
 
 ### 1. Clone & install
